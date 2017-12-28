@@ -2,3 +2,39 @@ h1 {
   font-family: helvetica;
   font-weight: 200;
 }
+
+.topSection {
+  display: flex;
+  flex: 1;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+
+//Footer
+section, footer {
+    padding: 80px 20px;
+}
+
+footer {
+    color: #999;
+    font-size: 16px;
+    background-color: lightgray;
+}
+
+footer a {
+    color: #999;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 7px;
+}
