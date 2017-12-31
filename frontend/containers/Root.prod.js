@@ -14,7 +14,7 @@ export default function Root({ store }) {
               <div>
                   <Route path={"/"} component = {NavBar} />
                   <Route exact path={"/"}  component = {AppContainer} />
-                  <Route exact path={"/post"}  component = {Post} />
+                  <Route exact path={"/post/:docid"}  component = {Post} />
                   <Route path={"/"} component = {Footer} />
               </div>
           </BrowserRouter>
