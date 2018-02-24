@@ -80,7 +80,7 @@ class NavBar extends Component {
         <AppBar
           title="Luchen Peng"
           iconElementLeft={<Link to="/"><IconButton><ActionHome /></IconButton></Link>}
-          iconElementRight={<div><Logged /></div>}
+          // iconElementRight={<div><Logged /></div>}
         />
       </div>
         );

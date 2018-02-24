@@ -9,89 +9,89 @@ import {Map} from 'immutable';
 import {Editor, EditorState, RichUtils, DefaultDraftBlockRenderMap, convertFromRaw, convertToRaw} from 'draft-js';
 
 const myBlockTypes = DefaultDraftBlockRenderMap.merge(new Map({
-  right: {
-    wrapper: <div className = "right-align"/>
-  },
-  center: {
-    wrapper: <div className = "center-align"/>
-  }
+    right: {
+        wrapper: <div className = "right-align"/>
+    },
+    center: {
+        wrapper: <div className = "center-align"/>
+    }
 
 }));
 
 class Post extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      docid: 1,
-      title: '',
-      editorState: EditorState.createEmpty(),
-      currentFontSize: 12,
-      inlineStyles: {},
-      params: 1,
-    };
-    const self = this;
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            docid: 1,
+            title: '',
+            editorState: EditorState.createEmpty(),
+            currentFontSize: 12,
+            inlineStyles: {},
+            params: 1,
+        };
+        const self = this;
+    }
 
-  componentWillMount(){
-    axios.post(`/getPost`, {
-      docid: this.props.match.params.docid
-    })
-    .then(response=>{
-      console.log("response in main component will mount", response);
-      this.setState({
-        editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(response.data.body))),
-        title: response.data.title,
-        // content: response.data.body
-      });
-      console.log('state after set state', this.state);
-    })
-    .catch(err=>console.log(err));
-  }
+  // componentWillMount(){
+  //   axios.post(`/getPost`, {
+  //     docid: this.props.match.params.docid
+  //   })
+  //   .then(response=>{
+  //     console.log("response in main component will mount", response);
+  //     this.setState({
+  //       editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(response.data.body))),
+  //       title: response.data.title,
+  //       // content: response.data.body
+  //     });
+  //     console.log('state after set state', this.state);
+  //   })
+  //   .catch(err=>console.log(err));
+  // }
 
-  onChange(editorState){
+    onChange(editorState) {
     // const selection = window.getSelection();
     // console.log(selection.anchorNode, selection.anchorOffset, selection.focusNode);
-    this.setState({
-      editorState
-    });
-  }
-
-
-  toggleFormat(e, style, block){
-    // this.refs.editor.focus();
-    e.preventDefault();
-    if(block){
-      this.setState({
-        editorState: RichUtils.toggleBlockType(this.state.editorState, style, block)
-      });
-    }else{
-      this.setState({
-        editorState: RichUtils.toggleInlineStyle(this.state.editorState, style)
-      });
+        this.setState({
+            editorState
+        });
     }
-  }
 
-  formatButton({icon, style, block}) {
-    return(
-      <RaisedButton
-        backgroundColor = {
-          // this.state.editorState.getCurrentInlineStyle().has(style) ?
-          // String(colors.gray200) :
-          String(colors.gray800)
+
+    toggleFormat(e, style, block) {
+    // this.refs.editor.focus();
+        e.preventDefault();
+        if(block) {
+            this.setState({
+                editorState: RichUtils.toggleBlockType(this.state.editorState, style, block)
+            });
+        }else{
+            this.setState({
+                editorState: RichUtils.toggleInlineStyle(this.state.editorState, style)
+            });
         }
-        onMouseDown = {(e) => this.toggleFormat(e, style, block)}
-        icon={<FontIcon className="material-icons"> {icon} </FontIcon>}
-  />
-    );
-  }
+    }
 
-  formatColor(color){
-    var newInlineStyles = Object.assign({}, this.state.inlineStyles, {[color.hex]: {color: color.hex}});
-    this.setState({
-      inlineStyles: newInlineStyles,
-      editorState: RichUtils.toggleInlineStyle(this.state.editorState, color.hex)
-    });
-  }
+    formatButton({icon, style, block}) {
+        return(
+        <RaisedButton
+          backgroundColor = {
+            // this.state.editorState.getCurrentInlineStyle().has(style) ?
+            // String(colors.gray200) :
+            String(colors.gray800)
+          }
+          onMouseDown = {(e) => this.toggleFormat(e, style, block)}
+          icon={<FontIcon className="material-icons"> {icon} </FontIcon>}
+    />
+        );
+    }
+
+    formatColor(color) {
+        var newInlineStyles = Object.assign({}, this.state.inlineStyles, {[color.hex]: {color: color.hex}});
+        this.setState({
+            inlineStyles: newInlineStyles,
+            editorState: RichUtils.toggleInlineStyle(this.state.editorState, color.hex)
+        });
+    }
 
   applyIncreaseFontSize(shrink){
     // console.log('increase font size', this.state.inlineStyles);

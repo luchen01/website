@@ -3,8 +3,8 @@ import { combineReducers } from 'redux';
 import userReducer from './user';
 
 const rootReducer = combineReducers({
-  userid: userReducer,
-  routing
+    userid: userReducer,
+    routing
 });
 
 export default rootReducer;
