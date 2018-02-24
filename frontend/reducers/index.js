@@ -1,8 +1,10 @@
-function rootReducer(state = {name: 'Horizons'}, action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+import { routerReducer as routing } from 'react-router-redux';
+import { combineReducers } from 'redux';
+import userReducer from './user';
+
+const rootReducer = combineReducers({
+  userid: userReducer,
+  routing
+});
 
 export default rootReducer;
