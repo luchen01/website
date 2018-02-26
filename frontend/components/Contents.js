@@ -50,11 +50,7 @@ class Contents extends Component {
     render() {
         return (
       <div className = "contents col-md-8 col-xs-12">
-        <div>
-            <h1>Slider goes here</h1>
-            <img className = "slider" src="https://wallpapersite.com/images/pages/pic_h/5655.jpg" alt="cuteKittens" />
-            {/* <img src="../assets/stylesheets/img/IMG_0008.jpg" alt="profileimg"/> */}
-        </div>
+        
         <TextField
           hintText="New Document Name"
           onChange = {(event)=>this.setState({newDocName: event.target.value})}

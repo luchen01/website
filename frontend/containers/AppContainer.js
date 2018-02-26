@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 import Title from '../components/Title';
 import AboutMe from '../components/AboutMe';
 import Contents from '../components/Contents';
+import Slider from '../components/Slider';
 
 const AppContainer = ({ name }) => {
     return (
       <div>
         <div className = "container">
+            <Slider />
           <div className = "topSection">
             <Contents />
             <AboutMe />
