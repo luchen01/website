@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import Title from '../components/Title';
-import AboutMe from '../components/AboutMe';
 import Contents from '../components/Contents';
 import Slider from '../components/Slider';
 
@@ -11,11 +10,10 @@ const AppContainer = ({ name }) => {
       <div>
         <div className = "container">
             <Slider />
-          <div className = "topSection">
-            <Contents />
-            <AboutMe />
           </div>
-        </div>
+          <div className = "container">
+            <Contents />
+          </div>
         </div>
     );
 };

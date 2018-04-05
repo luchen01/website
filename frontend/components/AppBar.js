@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-DOM';
-import AppBar from 'material-ui/AppBar';
+// import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import Toggle from 'material-ui/Toggle';
+// import Toggle from 'material-ui/Toggle';
 import AuthModal from './AuthModal';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import ActionHome from 'material-ui/svg-icons/action/home';
@@ -68,7 +68,6 @@ class Logged extends React.Component {
 }
 
 
-
 class NavBar extends Component {
     constructor(props) {
         super(props);
@@ -76,12 +75,15 @@ class NavBar extends Component {
 
     render() {
         return (
-      <div>
-        <AppBar
+      <div className = "navBar">
+        <Link to="/">Home</Link>
+        <h1>This is the header</h1>
+
+        {/* <AppBar
           title="Luchen Peng"
           iconElementLeft={<Link to="/"><IconButton><ActionHome /></IconButton></Link>}
           // iconElementRight={<div><Logged /></div>}
-        />
+        /> */}
       </div>
         );
     }

@@ -6,7 +6,6 @@ import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
 import FontIcon from 'material-ui/FontIcon';
 import axios from 'axios';
-axios.defaults.withCredentials = true;
 import { connect } from 'react-redux';
 import {userData} from '../actions/index';
 import SelectField from 'material-ui/SelectField';

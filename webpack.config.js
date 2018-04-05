@@ -9,11 +9,15 @@ module.exports = {
         rules: [
             { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
+            {test: /\.(gif|png|jpe?g|svg)$/i,
+                exclude: /node_modules/, loader: 'file-loader?name=images/[name].[ext]'
+            },
+             { test: /\.(png|jpg)$/, loader: 'url-loader' }
         ],
     },
-    resolve: {
-        extensions: ['.js', '.scss']
-    },
+    // resolve: {
+    //     extensions: ['.js', '.scss']
+    // },
     output: {
         path: path.join(__dirname, '/public'),
         publicPath: '/',

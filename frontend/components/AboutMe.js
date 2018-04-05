@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class AboutMe extends Component {
   render() {
     return(
-      <div className = "aboutMe col-md-4 col-xs-12">
+      <div className = "container">
         <h1>About Me</h1>
         {/* <img src="file:///Users/luchenpeng/personal/website/frontend/assets/stylesheets/img/IMG_0478.jpg"/> */}
         <p>
@@ -23,6 +23,7 @@ class AboutMe extends Component {
             and people.
           Email me luchenpengnyc@gmail.com.
         </p>
+        <h1>Contact me</h1>
       </div>
     )
   }
