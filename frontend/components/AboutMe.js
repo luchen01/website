@@ -23,6 +23,8 @@ class AboutMe extends Component {
             and people.
           Email me luchenpengnyc@gmail.com.
         </p>
+        <a href="https://www.linkedin.com/in/luchenpeng/">LinkedIn</a>
+        <a href="https://github.com/luchen01">Github</a>
         <h1>Contact me</h1>
       </div>
     )

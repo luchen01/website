@@ -5,21 +5,26 @@ class Projects extends Component {
         super(props);
         this.state = {
             projects: [{ name: 'MadFlatter',
-                description: ''},
+                description: 'An web app that helps people find apartments and roommates in San Francisco.',
+                link: "https://github.com/luchen01/MadFlatter_frontend"},
             { name: 'BobaScript',
-                description: ''},
+                description: 'New coding language that helps visualize fundamental computer science concepts.',
+                link: "https://github.com/borajimin/BobaScript-frontend"},
             { name: 'Fran.AI',
-                description: ''}],
+                description: 'AI supported hotline that helps city nomads find resources that they need.',
+                link: "https://github.com/luchen01/TwilioApp"}],
             newProject: []};
     }
 
     render()  {
         return (
-      <div className = "container">
+      <div>
         {this.state.projects.map((project)=>{
-            <div className="project">
-            {project.name}
-          </div>;
+            return(<div className="project">
+            {project.name}<br/>
+            {project.description}<br/>
+            <a href ={project.link}>Link here</a>
+          </div>);
         })}
       </div>
         );

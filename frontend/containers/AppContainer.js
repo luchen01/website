@@ -8,12 +8,12 @@ import Slider from '../components/Slider';
 const AppContainer = ({ name }) => {
     return (
       <div>
-        <div className = "container">
+        {/* <div className = "container"> */}
             <Slider />
-          </div>
-          <div className = "container">
-            <Contents />
-          </div>
+          {/* </div> */}
+          {/* <div className = "container"> */}
+            <Contents/>
+          {/* </div> */}
         </div>
     );
 };

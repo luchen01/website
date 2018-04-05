@@ -77,7 +77,7 @@ class NavBar extends Component {
         return (
       <div className = "navBar">
         <Link to="/">Home</Link>
-        <h1>This is the header</h1>
+        <h1>Welcome!</h1>
 
         {/* <AppBar
           title="Luchen Peng"

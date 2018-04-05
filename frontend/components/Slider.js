@@ -6,11 +6,10 @@ class Slider extends React.Component {
     render() {
         return(
           <div className = "background">
-              <h1>photo</h1>
-              {/* <img className = "slider" src="https://wallpapersite.com/images/pages/pic_h/5655.jpg" alt="cuteKittens" /> */}
-              {/* <img src={img1} alt="profileimg"/> */}
+            Welcome!
+            <div>{`</>`}</div>
           </div>
-      );
+        );
     }
 
 }

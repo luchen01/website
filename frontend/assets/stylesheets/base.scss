@@ -6,7 +6,15 @@ h1 {
 .background{
   // background:url('./img/IMG_0478.jpg');
   width: 500px;
-  height: 500px
+  height: 500px;
+  margin: auto;
+  background-color: beige;
+}
+
+.contents{
+  margin: auto;
+  padding: 10px;
+  flex:auto;
 }
 
 .container {
@@ -38,9 +46,11 @@ h1 {
 
 .project {
   border: 2px solid black;
-  margin: 10px;
+  margin: auto;
   padding: 10px;
-  
+  height: 200px;
+  width: 80%;
+  background-color: beige;
 }
 
 //Footer
